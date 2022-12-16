@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Reviews;
 use App\Http\Requests\StoreReviewsRequest;
 use App\Http\Requests\UpdateReviewsRequest;
+use App\Http\Resources\Product\ProductResource;
 
 class ReviewsController extends Controller
 {
@@ -15,7 +16,7 @@ class ReviewsController extends Controller
      */
     public function index()
     {
-        //
+        return "index";
     }
 
     /**
@@ -47,7 +48,7 @@ class ReviewsController extends Controller
      */
     public function show(Reviews $reviews)
     {
-        //
+        return new ProductResource($reviews);
     }
 
     /**
